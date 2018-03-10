@@ -1,0 +1,67 @@
+extends extend/blank
+
+block css
+    link(rel='stylesheet', href='bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css')
+
+block contents
+    .row
+        .col-lg-12
+            h1.page-header Tables
+    .row
+        .col-lg-12
+            .panel.panel-default
+                
+                .panel-heading
+                    | DataTables Advanced Tables
+                // /.panel-heading
+                .panel-body
+                    .row
+                        .col-lg-12
+                            .table-responsive
+                                table.table.table-striped.table-bordered.table-hover
+                                    thead
+                                        tr
+                                            th #
+                                            th 장치명
+                                            th 장소
+                                            th 판매금액
+                                    tbody
+                                        each item in value
+                                            tr
+                                                td #{item.machineId}
+                                                td #{item.deviceName}
+                                                td #{item.displayName}
+                                                td #{item.sell}
+    .row
+        .col-lg-12
+            .panel.panel-default
+                .panel-heading 날짜 선택
+                .panel-body
+                    .row
+                        .col-lg-12
+                            form(action="", method="post")
+                                .col-lg-8
+                                    .input-group.input-daterange
+                                        input.form-control(type='text', value="")
+                                        .input-group-addon ~
+                                        input.form-control(type='text', value="")
+                                .col-lg-2
+                                    button(type="submit").btn.btn-primary.col-lg-4 요청하기
+
+                    .row
+                        .table-response
+                            table.table.table-striped.table-bordered.table.hover
+
+block scripts
+    script(src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")
+    script(src="bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ko.min.js")
+
+    script.
+        $('.input-daterange input').each(function() {
+            $(this).datepicker({
+                setDate: new Date(),
+                endDate: '+0d',
+                format: 'yyyy-mm-dd',
+                language: 'ko'
+            });
+        });

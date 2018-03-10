@@ -1,0 +1,27 @@
+extends extend/blank
+
+block contents
+    .row
+        .col-lg-12
+
+    //- 장치 판매현황
+
+    .row
+        .col-lg-12
+            .panel.panel-primary
+                .panel-heading
+                .panel-body
+                    .table-responsive
+                        table.table.table-striped.table-bordered.table-hover
+                            thead
+                                tr
+                                    th 가격
+                                    th 결제 대금 지급여부
+                                    th 판매일자
+                            tbody
+                                each sell in sells
+                                    tr
+                                        td #{sell.price}
+                                        td 
+                                        td #{sell.pay_at}
+                .panel-footer

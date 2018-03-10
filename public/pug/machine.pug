@@ -1,0 +1,41 @@
+extends extend/blank
+
+block contents
+    .row
+        .col-lg-12
+            h1.page-header 장치 관리
+
+    .row
+        .col-lg-12
+            .panel.panel-primary
+                .panel-heading 설치된 장치 목록
+                .panel-body
+                    .row
+                        .col-lg-12
+                            table.table.table-striped.table-bordered.table-hover
+                                thead
+                                    tr
+                                        th MAC
+                                        th 장치명
+                                        th 사용자 구분 장치명
+                                        th 설명
+                                        th 가동 상태
+                                tbody
+                                    each machine in machines
+                                            tr(data-url='/machine/' + machine.id).clickable-row
+                                                td #{machine.macAddress}
+                                                td #{machine.deviceName}
+                                                td #{machine.displayName}
+                                                td #{machine.description}
+                                                td #{machine.isRunning ? "가동 중" : "가동 중지"}
+                .panel-footer 총 #{machines.filter(item => { return item.isRunning }).length}대 가동중
+
+block scripts
+    script.
+        $('.clickable-row').click(function() {
+            let path = $(this).data('url')
+            window.location = path
+        })
+
+
+    

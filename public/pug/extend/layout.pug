@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+        link(rel="stylesheet", href="bower_components/startbootstrap-sb-admin-2/vendor/bootstrap/css/bootstrap.min.css")
+        link(rel="stylesheet", href="bower_components/startbootstrap-sb-admin-2/vendor/metisMenu/metisMenu.min.css")
+        link(rel="stylesheet", href="bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css")
+        link(rel="stylesheet", href="bower_components/startbootstrap-sb-admin-2/vendor/morrisjs/morris.css")
+        link(rel="stylesheet", href="bower_components/startbootstrap-sb-admin-2/vendor/font-awesome/css/font-awesome.min.css")
+        block css
+
+        title #{title}
+    body
+        
+        include ../include/header
+
+        block root
+    
+        include ../include/footer
+
+        script(src="bower_components/startbootstrap-sb-admin-2/vendor/jquery/jquery.min.js")
+        script(src="bower_components/startbootstrap-sb-admin-2/vendor/bootstrap/js/bootstrap.min.js")
+        script(src="bower_components/startbootstrap-sb-admin-2/vendor/metisMenu/metisMenu.min.js")
+        script(src="bower_components/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js")
+
+        block scripts

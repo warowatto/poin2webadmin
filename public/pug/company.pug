@@ -1,0 +1,44 @@
+extends extend/blank
+
+//- 업체 정보 입력폼
+block contents
+    .row
+        .col-lg-12
+            h1.page-header 업체 정보 변경
+
+    .row
+        .col-lg-3
+            form(action="/company", method="post")
+                .panel.panel-default
+                    .panel-heading 정보 수정
+                    .panel-body
+                        .row
+                            .col-lg-12
+                                .form-group
+                                    lable 전화번호
+                                    input(placeholder=value.tel, name="tel").form-control
+                                .form-group
+                                    lable 휴대전화번호
+                                    input(placeholder=value.phone, name="phone").form-control
+                                .form-group
+                                    lable FAX
+                                    input(placeholder=value.fax, name="fax").form-control
+                                .form-group
+                                    lable 은행명
+                                    input(placeholder=value.bankName, name="bankName").form-control
+                                    p.help-block 판매금액이 송금될 은행을 입력해주세요
+                                .form-group
+                                    lable 계좌번호
+                                    input(placeholder=value.accountNumber, name="accountNumber").form-control
+                                .form-group
+                                    lable 예금주
+                                    input(placeholder=value.accuntName, name="accountName").form-control
+                                .form-group
+                                    lable 결제처리시 알림사항
+                                    textarea(rows="3", placeholder=value.paymentInfo, name="message").form-control
+                                    p.help-block PayOT가 결제를 진행할때 참고할 점을 작성해 주세요
+                                button(type="submit").btn.btn-primary 변경하기
+
+block scripts
+    script.
+        console.log(this)

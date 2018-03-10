@@ -1,0 +1,53 @@
+extends layout
+
+block root
+    #wrapper
+        // Navigation
+        nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0')
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='/') PayOT - Poin
+            // /.navbar-header
+            ul.nav.navbar-top-links.navbar-right
+                li #{username}
+                li.dropdown
+                    a.dropdown-toggle(data-toggle='dropdown', href='#')
+                        i.fa.fa-user.fa-fw
+                        i.fa.fa-caret-down
+                    ul.dropdown-menu.dropdown-user
+                        li
+                            a(href='/logout')
+                                i.fa.fa-sign-out.fa-fw
+                                |  Logout
+                    // /.dropdown-user
+                // /.dropdown
+            // /.navbar-top-links
+            .navbar-default.sidebar(role='navigation')
+                .sidebar-nav.navbar-collapse
+                    ul#side-menu.nav
+                        li
+                            a(href='/dashboard')
+                                i.fa.fa-dashboard.fa-fw
+                                |  대시보드
+                        li
+                            a(href='/products')
+                                i.fa.fa-table.fa-fw
+                                |  상품
+                        li
+                            a(href='/machine')
+                                i.fa.fa-table.fa-fw
+                                |  장치
+                        li
+                            a(href='/company')
+                                i.fa.fa-edit.fa-fw
+                                |  업체 정보 변경
+        #page-wrapper
+            block contents
+                        
+                        
+
+

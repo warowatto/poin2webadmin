@@ -1,0 +1,25 @@
+extends extend/blank
+
+block contents
+    .row
+        .col-lg-12
+            .panel.panel-primary
+                .panel-heading 서비스중인 상품 목록
+                .panel-body
+                    table.table.table-striped.table-bordered.table-hover
+                        thead
+                            tr
+                                th 상품명
+                                th 서비스 시간
+                                th 서비스 설명
+                                th 적용된 장치 수
+                                th 적용일자
+                        tbody
+                            each product in products
+                                tr
+                                    td #{product.name}
+                                    td #{product.serviceTime}
+                                    td #{product.description}
+                                    td #{product.serviceCount}대
+                                    td #{product.create_at}
+                .panel-footer 총 #{products.length}개의 상품이 등록되어 있습니다

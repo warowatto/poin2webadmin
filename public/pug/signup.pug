@@ -1,0 +1,9 @@
+extends extend/layout
+
+block contents
+    form(action="/signup", method="post")
+        input(type="email", name="email")
+        input(type="password", name="password")
+        input(type="password", name="validate")
+        input(type="text", name="name")
+        input(type="submit", value="회원가입")
